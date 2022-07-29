@@ -1,6 +1,6 @@
 # plugpagservice
 
-A new Flutter plugin project.
+Plugin para facilitar a integração com smartpos PagSeguro moderninha
 
 ## Getting Started
 
