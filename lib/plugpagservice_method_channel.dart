@@ -11,7 +11,13 @@ class MethodChannelPlugpagservice extends PlugpagservicePlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future getRequestPermissions() async {
+    await methodChannel.invokeMethod('getRequestPermissions');
   }
 }

@@ -14,7 +14,7 @@ abstract class PlugpagservicePlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelPlugpagservice].
   static PlugpagservicePlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [PlugpagservicePlatform] when
   /// they register themselves.
@@ -25,5 +25,9 @@ abstract class PlugpagservicePlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future getRequestPermissions() {
+    throw UnimplementedError('requestPermission() has not been implemented.');
   }
 }

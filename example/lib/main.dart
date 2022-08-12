@@ -55,7 +55,32 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Running on: $_platformVersion\n'),
+              Text(
+                "Antes de tudo, faça o pareamento da sua máquina de cartão!",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.red, fontSize: 20),
+              ),
+              Text(
+                "Se nao fizer isso o aplicativo vai fechar, estou resolvendo isso...",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.red, fontSize: 20),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text("Execute os botões na ordem"),
+              ElevatedButton(
+                child: Text("Pedir permissões"),
+                onPressed: () {
+                  _plugpagservicePlugin.getRequestPermissions();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
